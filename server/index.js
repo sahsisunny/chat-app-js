@@ -1,11 +1,20 @@
-const io = require('socket.io')(process.env.PORT || 8000, {
-     cors: {
-          origin: '*',
-          methods: ['GET', 'POST']
-     }
+const http = require('http');
+const socketio = require('socket.io');
+const cors = require('cors');
+
+const server = http.createServer(cors(), (req, res) => {
+     // your normal server-side code goes here
 });
 
 const users = {};
+const PORT = process.env.PORT || 8000;
+const HOST = 'localhost';
+const io = socketio(server, {
+     cors: {
+          origin: "*",
+          methods: ["GET", "POST"]
+     }
+});
 
 io.on('connection', socket => {
 
@@ -25,4 +34,7 @@ io.on('connection', socket => {
      });
 });
 
+server.listen(PORT, HOST, () => {
+     console.log(`Server running at http://${HOST}:${PORT}/`);
+});
 
