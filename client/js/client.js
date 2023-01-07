@@ -1,4 +1,4 @@
-const socket = io('https://backend-chat.onrender.com');
+const socket = io('https://backend-chat.onrender.com:8000');
 const messageInput = document.getElementById('message-input');
 const messageContainer = document.querySelector(".container");
 const sendBTN = document.getElementById('send');
