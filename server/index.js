@@ -1,6 +1,6 @@
 const io = require('socket.io')(8000, {
      cors: {
-          origin: 'https://idiscuss.netlify.app/',
+          origin: 'http://localhost:5500',
           methods: ['GET', 'POST']
      }
 });
