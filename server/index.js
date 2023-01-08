@@ -9,12 +9,7 @@ const server = http.createServer(cors(), (req, res) => {
 const users = {};
 const PORT = process.env.PORT || 8000;
 const HOST = process.env.HOST || 'localhost';
-const io = socketio(server, {
-     cors: {
-          origin: "*",
-          methods: ["GET", "POST"]
-     }
-});
+const io = socketio(server);
 
 io.on('connection', socket => {
 
