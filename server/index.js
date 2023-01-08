@@ -6,8 +6,8 @@ const server = http.createServer((req, res) => {
 });
 
 const users = {};
-const PORT = process.env.PORT || 8000;
-const HOST =process.env.HOST || 'localhost';      
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
 const io = socketio(server);
 
 io.on('connection', socket => {
