@@ -8,7 +8,7 @@ const server = http.createServer(cors(), (req, res) => {
 
 const users = {};
 const PORT = process.env.PORT || 8000;
-const HOST = 'localhost';
+const HOST = process.env.HOST || 'localhost';
 const io = socketio(server, {
      cors: {
           origin: "*",
