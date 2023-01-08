@@ -1,8 +1,7 @@
 const http = require('http');
 const socketio = require('socket.io');
-const cors = require('cors');
 
-const server = http.createServer(cors(), (req, res) => {
+const server = http.createServer((req, res) => {
      // your normal server-side code goes here
 });
 
