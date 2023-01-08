@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
 
 const users = {};
 const PORT = process.env.PORT || 8000;
-const HOST = process.env.HOST || 'localhost';
+const HOST = process.env.HOST || 'chat-back-l9k6.onrender.com';
 const io = socketio(server);
 
 io.on('connection', socket => {
